@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coverage Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Coverage Dashboard</h1>
+    <div class="upload-section">
+      <div class="upload-icon">📊</div>
+      <h2 style="margin: 16px 0;">Coverage Analytics Dashboard</h2>
+      <p style="opacity: 0.8; margin-bottom: 24px;">Paste your coverage-final.json content below to generate beautiful analytics</p>
+      <textarea id="jsonInput" rows="12" style="width:100%;max-width:700px;" placeholder="Paste coverage-final.json here..."></textarea>
+      <br>
+      <button id="processBtn">
+        <span class="btn-text">✨ Analyze Coverage</span>
+        <span class="btn-loading" style="display:none;">🔄 Processing...</span>
+      </button>
+    </div>
+    <div id="results" style="display:none;">
+      <div class="summary-section">
+        <h2>Coverage Summary</h2>
+        <div class="summary-cards" id="summaryCards"></div>
+      </div>
+      
+      <div class="charts-section">
+        <div class="chart-container">
+          <h3>Coverage Distribution</h3>
+          <canvas id="coverageChart" width="400" height="200"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Coverage Types Comparison</h3>
+          <canvas id="typesChart" width="400" height="200"></canvas>
+        </div>
+      </div>
+      
+      <div class="score-section">
+        <h2>Coverage Score</h2>
+        <div class="score-container" id="scoreContainer">
+          <div class="score-display">
+            <div class="score-stars" id="scoreStars"></div>
+            <div class="score-text" id="scoreText"></div>
+            <div class="score-percentage" id="scorePercentage"></div>
+          </div>
+          <div class="score-breakdown" id="scoreBreakdown"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
